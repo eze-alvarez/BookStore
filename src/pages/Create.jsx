@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { useAppContext } from '../store/Store'
 import styles from './Create.module.css'
-import Layout from '../components/layout'
 import { useNavigate } from 'react-router-dom'
 
 export default function Create () {
@@ -64,92 +63,92 @@ export default function Create () {
   }
 
   return (
-    <Layout>
-      <div className={styles.createContainer}>
-        <form onSubmit={handleSubmit} className={styles.formContainer}>
-          <section>
-            <div>
-              <h2 className={styles.title}>Title</h2>
-              <input
-                minLength={3}
-                maxLength={50}
-                type='text'
-                name='title'
-                onChange={handleChange}
-                value={title}
-              />
-            </div>
 
-            <div>
-              <h2>Author</h2>
-              <input
-                maxLength={30}
-                type='text'
-                name='author'
-                onChange={handleChange}
-                value={author}
-              />
-            </div>
-
-          </section>
-
-          <section>
-            <div>
-              <h2>Cover</h2>
-              <input
-                type='file' name='cover' onChange={handleOnChangeFile}
-                style={{
-                  fontSize: '1.5rem',
-                  width: '100%'
-                }}
-              />
-              <div>{cover ? <img src={cover} className={styles.coverImg} /> : ''}</div>
-            </div>
-          </section>
-
-          <section>
-            <div>
-              <h2>Intro</h2>
-              <input
-                maxLength={100}
-                type='text'
-                name='intro'
-                onChange={handleChange}
-                value={intro}
-              />
-            </div>
-
-            <div className={styles.checkSpace}>
-              <input
-                type='checkbox'
-                name='completed'
-                onChange={handleChange}
-                value={completed}
-              />
-              <h2>Completed</h2>
-            </div>
-
-            <div>
-              <h2>Review</h2>
-              <textarea
-                className={styles.review}
-                maxLength={250}
-                type='text'
-                name='review'
-                onChange={handleChange}
-                value={review}
-              />
-            </div>
-
+    <div className={styles.createContainer}>
+      <form onSubmit={handleSubmit} className={styles.formContainer}>
+        <section>
+          <div>
+            <h2 className={styles.title}>Title</h2>
             <input
-              className={styles.register}
-              type='submit'
-              value='Register book'
+              minLength={3}
+              maxLength={50}
+              type='text'
+              name='title'
+              onChange={handleChange}
+              value={title}
             />
-          </section>
+          </div>
 
-        </form>
-      </div>
-    </Layout>
+          <div>
+            <h2>Author</h2>
+            <input
+              maxLength={30}
+              type='text'
+              name='author'
+              onChange={handleChange}
+              value={author}
+            />
+          </div>
+
+        </section>
+
+        <section>
+          <div>
+            <h2>Cover</h2>
+            <input
+              type='file' name='cover' onChange={handleOnChangeFile}
+              style={{
+                fontSize: '1.5rem',
+                width: '100%'
+              }}
+            />
+            <div>{cover ? <img src={cover} className={styles.coverImg} /> : ''}</div>
+          </div>
+        </section>
+
+        <section>
+          <div>
+            <h2>Intro</h2>
+            <input
+              maxLength={100}
+              type='text'
+              name='intro'
+              onChange={handleChange}
+              value={intro}
+            />
+          </div>
+
+          <div className={styles.checkSpace}>
+            <input
+              type='checkbox'
+              name='completed'
+              onChange={handleChange}
+              value={completed}
+            />
+            <h2>Completed</h2>
+          </div>
+
+          <div>
+            <h2>Review</h2>
+            <textarea
+              className={styles.review}
+              maxLength={250}
+              type='text'
+              name='review'
+              onChange={handleChange}
+              value={review}
+            />
+          </div>
+
+          <input
+            className={styles.register}
+            type='submit'
+            value='Register book'
+          />
+        </section>
+
+      </form>
+    </div>
+
   )
 }

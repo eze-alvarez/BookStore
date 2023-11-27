@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import Layout from '../components/Layout'
 import { useAppContext } from '../store/Store'
 import styles from './View.module.css'
 export default function View () {
@@ -14,7 +13,7 @@ export default function View () {
   }, [])
 
   return (
-    <Layout>
+    <div>
       {
         item && (
           <section className={styles.detailContainer}>
@@ -52,6 +51,6 @@ export default function View () {
         )
       }
 
-    </Layout>
+    </div>
   )
 }
