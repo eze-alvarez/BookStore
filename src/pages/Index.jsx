@@ -1,5 +1,5 @@
 import Book from '../components/Book'
-import Layout from '../components/layout'
+import Layout from '../components/Layout'
 import { useAppContext } from '../store/Store'
 import styles from './Index.module.css'
 // import { data } from '../api/api'
