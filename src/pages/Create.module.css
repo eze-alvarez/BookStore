@@ -1,0 +1,83 @@
+.createContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  padding: 7rem 5rem;
+}
+.formContainer{
+  width: 30rem;
+  background-color: #6a7eceed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 2rem;
+  border-radius: 2rem;
+  gap: 1rem;
+}
+.formContainer > section{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.title{
+  width: 70%;
+}
+input{
+  padding: 0.15rem;
+  font-size: 1.5rem;
+}
+input[type=text]{
+  width: 90%;
+}
+.coverImg{
+  width: 30%;
+  margin-top: 1rem;
+}
+.checkSpace{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-left: 0.5rem;
+}
+input[type=checkbox]
+{
+  /* Doble-tamaño Checkboxes */
+  -ms-transform: scale(2); /* IE */
+  -moz-transform: scale(2); /* FF */
+  -webkit-transform: scale(2); /* Safari y Chrome */
+  -o-transform: scale(2); /* Opera */
+  padding: 10px;
+}
+.review{
+  width: 90%;
+  height: 7rem;
+  margin-bottom: 2rem;
+  font-size: 1.3rem;
+}
+.register{
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+@media only screen and (min-device-width: 640px) and (orientation: landscape){
+  .formContainer{
+    display: grid;
+    grid-template-columns: repeat(3, 20rem);
+    width: 90rem;
+    height: 30rem;
+    gap: 3rem;
+  }
+  .formContainer>section{
+    gap: 1rem;
+  }
+  .coverImg{
+    width: 70%;
+  }
+}
+@media only screen and (min-width: 1080px) and (orientation: landscape){
+  .formContainer{
+    grid-template-columns: repeat(3, 25rem);
+    height: 40rem;
+    place-content: center;
+  }
+}

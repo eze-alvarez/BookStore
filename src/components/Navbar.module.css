@@ -1,0 +1,11 @@
+.navContainer{
+  background-color: #181d27;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+.linkStyle{
+  font-size: 2rem;
+}
