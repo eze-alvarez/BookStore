@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { useAppContext } from '../store/Store'
+import { useRouteMatch, Link } from 'react-router-dom'
 import styles from './Create.module.css'
-import { useNavigate } from 'react-router-dom'
+// import { useNavigate } from 'react-router-dom'
 
 export default function Create () {
   const [title, setTitle] = useState('')
@@ -12,7 +13,10 @@ export default function Create () {
   const [review, setReview] = useState('')
 
   const store = useAppContext()
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
+  const match = useRouteMatch()
+  const url = match.url.slice(0, -1)
+  console.log(url)
 
   function handleChange (e) {
     switch (e.target.name) {
@@ -48,7 +52,7 @@ export default function Create () {
     }
 
     store.createItem(newBook)
-    navigate('/')
+    // navigate('/')
   }
 
   function handleOnChangeFile (e) {
@@ -76,6 +80,7 @@ export default function Create () {
               name='title'
               onChange={handleChange}
               value={title}
+              required
             />
           </div>
 
@@ -87,6 +92,7 @@ export default function Create () {
               name='author'
               onChange={handleChange}
               value={author}
+              required
             />
           </div>
 
@@ -101,6 +107,7 @@ export default function Create () {
                 fontSize: '1.5rem',
                 width: '100%'
               }}
+              required
             />
             <div>{cover ? <img src={cover} className={styles.coverImg} /> : ''}</div>
           </div>
@@ -115,6 +122,7 @@ export default function Create () {
               name='intro'
               onChange={handleChange}
               value={intro}
+              required
             />
           </div>
 
@@ -137,6 +145,7 @@ export default function Create () {
               name='review'
               onChange={handleChange}
               value={review}
+              required
             />
           </div>
 
@@ -144,7 +153,9 @@ export default function Create () {
             className={styles.register}
             type='submit'
             value='Register book'
+            required
           />
+
         </section>
 
       </form>
